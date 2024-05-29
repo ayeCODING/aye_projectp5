@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row-justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
@@ -17,12 +17,21 @@
                 <div class="card-body">
                     <img src="{{ asset('storage/produks/' . $produk->image) }}" class="w-100 rounded">
                     <hr>
-                    <h4>{{ $produk->nama_produk }}</h4>
+                    <h4>{{ $produk->nama_produk }} </h4>
+                    <p class="tmt-3">
+                        Merk : {!! $produk->merk->nama_merk !!}
+                    </p>
                     <p class="tmt-3">
                         Harga : Rp.{{ number_format($produk->harga, 2) }}
                     </p>
                     <p class="tmt-3">
-                        {!! $produk->deskripsi !!}
+                        Stok : {!! $produk->stok !!}
+                    </p>
+                    <p class="tmt-3">
+                        Deskripsi : {!! $produk->deskripsi !!}
+                    </p>
+                    <p class="tmt-3">
+                        Kategori : {!! $produk->kategori->nama_kategori !!}
                     </p>
                 </div>
             </div>

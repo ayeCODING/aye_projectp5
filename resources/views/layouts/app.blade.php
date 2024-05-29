@@ -65,6 +65,9 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @guest
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('produk.index')}}">{{ __('Produk') }}</a>
+                        </li>
                         @else
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('kategori.index')}}">{{ __('Kategori') }}</a>

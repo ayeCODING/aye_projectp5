@@ -9,6 +9,13 @@ class Kategori extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_kategori', 'deskripsi',];
-    protected $visible = ['nama_kategori', 'deskripsi',];
+    protected $fillable = ['nama_kategori'];
+    protected $visible = ['nama_kategori'];
+
+    public $timestamps = true;
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class, 'id_kategori');
+    }
 }

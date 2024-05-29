@@ -24,11 +24,11 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Produk</th>
-                                    <th>Merk</th>
+                                    <th>Nama Merk</th>
                                     <th>Harga</th>
                                     <th>Stok</th>
                                     <th>Deskripsi</th>
-                                    <th>Kategori</th>
+                                    <th>Nama Kategori</th>
                                     <th>Image</th>
                                 </tr>
                             </thead>
@@ -38,11 +38,11 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->nama_produk }}</td>
-                                    <td>{{ $data->merk }}</td>
+                                    <td>{{ $data->merk->nama_merk}}</td>
                                     <td>{{ $data->harga }}</td>
                                     <td>{{ $data->stok }}</td>
                                     <td>{{ $data->deskripsi }}</td>
-                                    <td>{{ $data->kategori }}</td>
+                                    <td>{{ $data->kategori->nama_kategori}}</td>
                                     <td>
                                         <img src="{{ asset('/storage/produks/' . $data->image) }}" class="rounded"
                                             style="width: 150px">
@@ -56,7 +56,7 @@
                                             <a href="{{ route('produk.edit', $data->id) }}"
                                                 class="btn btn-sm btn-outline-success">Edit</a> |
                                             <button type="submit" onclick="return confirm('Are You Sure ?');"
-                                                class="btn btn-sm btn-outline-danger">Delete</button>
+                                             class="btn btn-sm btn-outline-danger">Delete</button> |
                                         </form>
                                     </td>
                                 </tr>

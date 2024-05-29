@@ -12,5 +12,10 @@ class Merk extends Model
     protected $fillable = ['nama_merk'];
     protected $visible = ['nama_merk'];
 
-    
+    public $timestamps = true;
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class, 'id_merk' );
+    }
 }

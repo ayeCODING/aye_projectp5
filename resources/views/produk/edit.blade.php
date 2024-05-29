@@ -21,9 +21,9 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Nama Produk</label>
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"
-                                value="{{ $produk->nama }}" placeholder="produk Name" required>
-                            @error('nama')
+                            <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" name="nama_produk"
+                                value="{{ $produk->nama_produk }}" placeholder="produk Name" required>
+                            @error('nama_produk')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -27,16 +27,6 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Deskripsi</label>
-                            <input type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi"
-                                value="{{ old('deskripsi') }}" placeholder="Deskripsi" required>
-                            @error('deskripsi')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
                         <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
                         <button type="reset" class="btn btn-sm btn-warning">Reset</button>
 
