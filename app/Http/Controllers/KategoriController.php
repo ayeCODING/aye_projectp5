@@ -23,12 +23,11 @@ class KategoriController extends Controller
 
         $this->validate($request, [
             'nama_kategori' => 'required|unique:kategoris',
-            'deskripsi' => 'required',
+
         ]);
 
         $kategori = new Kategori();
         $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->deskripsi = $request->deskripsi;
         $kategori->save();
         return redirect()->route('kategori.index');
     }
@@ -51,12 +50,12 @@ class KategoriController extends Controller
     {
         $this->validate($request, [
             'nama_kategori' => 'required',
-            'deskripsi' => 'required',
+
         ]);
 
         $kategori = Kategori::findOrFail($id);
         $kategori->nama_kategori = $request->nama_kategori;
-        $kategori->deskripsi = $request->deskripsi;
+       
         $kategori->save();
         return redirect()->route('kategori.index');
     }

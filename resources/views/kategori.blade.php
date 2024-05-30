@@ -2,42 +2,16 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <center><h2>Produk List</h2></center>
+        <center><h2>Kategori</h2></center>
         @foreach ($produk as $item)
         <div class="card" style="width: 18rem;">
             <img src="{{asset('storage/produks/'.$item->image)}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <a href="/produk/{{$item->id}}" class="btn btn-info">lihat detail</a>
+              <p class=""><a href="/produk/{{$item->id}}">{{$item->nama_kategori}}</a></p>
             </div>
           </div>
         @endforeach
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Daftar Merk</h5>
-             <div class="card-body">
-                @foreach ($merk as $item)
-                <a href="{{ route('produk.filterByMerk', ['id' => $item->id]) }}" class="btn btn-info">{{ $item->nama_merk }}</a>
-                @endforeach
-             </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Daftar Kategori</h5>
-                <div class="card-body">
-                    @foreach ($kategori as $item)
-                <a href="{{ route('produk.filterByKategori', ['id' => $item->id]) }}" class="btn btn-info">{{ $item->nama_kategori }}</a>
-                @endforeach
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
 </div>
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">

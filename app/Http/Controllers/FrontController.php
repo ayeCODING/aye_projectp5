@@ -42,4 +42,12 @@ class FrontController extends Controller
         $produk = Produk::where('id_merk', $id)->latest()->get();
         return view('produk', compact('produk', 'merk', 'kategori'));
     }
+
+    public function filterByKategori($id)
+    {
+        $kategori = Kategori::all();
+        $merk = Merk::all();
+        $produk = Produk::where('id_kategori', $id)->latest()->get();
+        return view('kategori', compact('produk', 'merk', 'kategori'));
+    }
 }

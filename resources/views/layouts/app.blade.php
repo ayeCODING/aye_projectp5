@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.List', 'List') }}</title>
 
      <!-- Scripts -->
      <script src="{{ asset('js/app.js') }}" defer></script>
@@ -55,7 +55,7 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.List', 'List') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,10 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
                     <ul class="navbar-nav me-auto">
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('produk.index')}}">{{ __('Produk') }}</a>
+                            <a class="nav-link active" href="{{ url('produk')}}">{{ __('Produk') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('about')}}">{{ __('About') }}</a>
                         </li>
                         @else
                         <li class="nav-item">

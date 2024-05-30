@@ -4,7 +4,7 @@ use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -23,5 +23,6 @@ Route::get('produk', [FrontController::class, 'produk']);
 Route::get('produk/{id}', [FrontController::class, 'detailProduk']);
 Route::get('about', [FrontController::class, 'about']);
 Route::get('/produk/merk/{id}', [FrontController::class, 'filterByMerk'])->name('produk.filterByMerk');
-Route::get('kategori', [FrontController::class, 'produk']);
+Route::get('/produk/kategori/{id}', [FrontController::class, 'filterByKategori'])->name('produk.filterByKategori');
+
 
