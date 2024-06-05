@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -41,30 +41,32 @@
         </div>
     </div>
 </div>
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Informasi</h5>
-                <p>Alamat: Jl. Cibaduyut Raya No. 123, Kota Bandung, Negara Indonesia</p>
-                <p>Email: salmanananda2@gmail.com</p>
-                <p>Telepon: 0895392055699
-            <div class="col-md-4">
-                <h5>Tautan</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Kebijakan Privasi</a></li>
-                    <li><a href="#">Syarat dan Ketentuan</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h5>Ikuti Kami</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#"><img src="{{ asset('path_to_facebook_logo') }}" alt="Facebook" width="24" height="24"></a></li>
-<li><a href="#"><img src="{{ asset('path_to_instagram_logo') }}" alt="Instagram" width="24" height="24"></a></li>
-<li><a href="#"><img src="{{ asset('path_to_twitter_logo') }}" alt="Twitter" width="24" height="24"></a></li>
+<footer class="footer mt-5 py-3 bg-light">
+    <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <h5>Informasi</h5>
+        <p>Alamat: Jl. Cibaduyut No. 66, Cibaduyut, Kec.Bojongloa Kidul, Kota Bandung, Jawa Barat</p>
+        <p>Email: salmanananda2@gmail.com</p>
+        <p>Telepon: 0895392055699</p>
+      </div>
+      <div class="col">
+        <h5>Tautan</h5>
+        <ul class="list-unstyled">
+            <li><a href="#" style="text-decoration: none">Tentang Kami</a></li>
+            <li><a href="#" style="text-decoration: none">Kebijakan Privasi</a></li>
+            <li><a href="#" style="text-decoration: none">Syarat dan Ketentuan</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5>Ikuti Kami</h5>
+        <ul class="list-unstyled">
+            <li><i class="bi bi-instagram"></i><a href="https://www.instagram.com/accounts/onetap/?next=%2F&hl=en" style="text-decoration: none">  slmnaye</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-                </ul>
             </div>
         </div>
     </div>

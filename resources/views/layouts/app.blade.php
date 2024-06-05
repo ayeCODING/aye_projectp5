@@ -21,14 +21,22 @@
        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
        {{-- datatables styles --}}
    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
    <style>
+    body {
+        background: pink;
+    }
+
+    nav {
+        background: black;
+    }
     .card {
 
 padding: 50px;
 border-radius: 50px;
 background-color: #ffffff; /* Warna latar belakang putih */
-box-shadow: 0 8px 15px rgb(8, 251, 255); /* Efek bayangan */
+box-shadow: 0 8px 15px rgb(0, 0, 0); /* Efek bayangan */
 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Efek transisi pada transformasi dan bayangan */
 margin: 0 auto; /* Mengatur margin secara otomatis untuk membuatnya berada di tengah */
 margin-bottom: 20px;
@@ -36,7 +44,7 @@ margin-bottom: 20px;
 
 .card:hover {
 transform: translateY(-5px); /* Efek naik saat dihover */
-box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover */
+box-shadow: 0 12px 20px rgba(156, 3, 131, 0.925); /* Efek bayangan saat dihover */
 }
 
 
@@ -52,10 +60,10 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.List', 'List') }}
+                    {{ config('app.List', 'HOME') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -65,9 +73,6 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('produk')}}">{{ __('Produk') }}</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ url('about')}}">{{ __('About') }}</a>
                         </li>
@@ -94,17 +99,6 @@ box-shadow: 0 12px 20px rgba(13, 156, 3, 0.925); /* Efek bayangan saat dihover *
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
